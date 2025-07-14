@@ -1,17 +1,16 @@
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif; 
   color: #222;
   display: flex;
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .sidebar {
   width: 200px;
   background-color: #fff;
-  border-right: 1px solid #eee;
   height: 100vh;
-  padding: 100px 20px 30px 40px; 
+  padding: 140px 20px 30px 120px; 
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -19,18 +18,18 @@ body {
 }
 
 .logo {
-  max-width: 120px;
-  margin-bottom: 120px;
+  max-width: 40px;
+  margin-bottom: 10px; 
 }
 
 nav {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 nav a {
-  margin: 10px 0;
+  margin: 10px 0; 
   text-decoration: none;
   color: #222;
   font-weight: 500;
@@ -43,25 +42,26 @@ nav a:hover {
 
 .main-content {
   flex: 1;
-  padding: 80px 200px 80px 150px; /* left padding increased for centering */
+  padding: 100px 200px 80px 180px; 
   max-width: 700px;
+  background: #fff;
 }
 
 h1 {
-  font-family: Georgia, serif;
-  font-size: 2.5em;
-  font-weight: 400;
-  margin-bottom: 20px;
+  font-size: 2.4em;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
 }
 
 .intro {
+  font-size: 1.05em;
   line-height: 1.6;
-  max-width: 600px;
+  margin-bottom: 30px;
 }
 
 .bold {
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .section {
@@ -76,11 +76,11 @@ h1 {
 
 .section h3 {
   font-size: 1.5em;
-  font-weight: 500;
   margin: 10px 0;
 }
 
 .section p {
+  font-size: 1.05em;
   line-height: 1.6;
   max-width: 600px;
 }
@@ -94,10 +94,11 @@ form input, form button {
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: 'Helvetica Neue', sans-serif; 
 }
 
 form button {
-  background-color: white; 
+  background-color: white;
   color: #222;
   border: 1px solid #222;
   cursor: pointer;
@@ -111,4 +112,10 @@ form button:hover {
   color: green;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+footer {
+  margin-top: 80px;
+  font-size: 0.8em;
+  color: #999;
 }

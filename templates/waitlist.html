@@ -16,17 +16,21 @@
 
   <div class="main-content">
     <h1>Join the Waitlist</h1>
-    <p class="intro">Be among the first to experience Seaweed OI.</p>
+    <p class="intro">Be the first to experience Operating Intelligence on release.</p>
 
     {% if success %}
       <p class="success">You’ve been added to the waitlist!</p>
     {% endif %}
 
     <form method="POST">
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="email" name="email" placeholder="Your Email" required><br>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
       <button type="submit">Join Waitlist</button>
     </form>
+
+    <footer>
+      © 2025 Seaweed OI. All rights reserved.
+    </footer>
   </div>
 </body>
 </html>
