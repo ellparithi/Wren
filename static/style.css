@@ -85,7 +85,7 @@ h1 {
   max-width: 600px;
 }
 
-form input, form button {
+form input {
   display: block;
   width: 100%;
   max-width: 400px;
@@ -98,14 +98,34 @@ form input, form button {
 }
 
 form button {
-  background-color: white;
-  color: #222;
-  border: 1px solid #222;
-  cursor: pointer;
+  margin-top: 20px; 
+  width: auto;       
+  padding: 14px 28px;
+}
+
+
+form button {
+  background-color: #222;
+  color: white;
+  border: 2px solid #222;
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 form button:hover {
-  background-color: #f0f0f0;
+  background-color: white;
+  color: #222;
+  border: 2px solid #222;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
 }
 
 .success {
@@ -115,7 +135,29 @@ form button:hover {
 }
 
 footer {
-  margin-top: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  padding: 16px 0;
   font-size: 0.8em;
   color: #999;
+  z-index: 10;
 }
+
+footer .footer-inner {
+  max-width: 960px;         
+  margin: 0 auto;           
+  padding: 5px 380px;
+  font-size: 14px;
+  color: #888;
+  text-align: left;        
+}
+
+
+
+
+
+

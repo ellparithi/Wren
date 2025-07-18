@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Join Waitlist - Seaweed OI</title>
+  <title>Wren OI - Waitlist</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
   <div class="sidebar">
     <img src="{{ url_for('static', filename='seaweed_logo.png') }}" alt="Seaweed Logo" class="logo">
     <nav>
-      <a href="{{ url_for('home') }}">Seaweed</a>
-      <a href="{{ url_for('waitlist') }}">Test</a>
+      <a href="{{ url_for('home') }}">Wren</a>
+      <a href="{{ url_for('waitlist') }}">Waitlist</a>
     </nav>
   </div>
 
   <div class="main-content">
-    <h1>Join the Waitlist</h1>
-    <p class="intro">Be the first to experience Operating Intelligence on release.</p>
+    <h1>Test Wren</h1>
+    <p class="intro">Be among the first to experience Wren Ol.</p>
 
     {% if success %}
       <p class="success">You’ve been added to the waitlist!</p>
@@ -25,11 +25,13 @@
     <form method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
-      <button type="submit">Join Waitlist</button>
+      <button type="submit">Get Early Access</button>
     </form>
 
     <footer>
-      © 2025 Seaweed OI. All rights reserved.
+      <div class="footer-inner">
+      © 2025 Wren OI. All rights reserved.
+      </div>
     </footer>
   </div>
 </body>
