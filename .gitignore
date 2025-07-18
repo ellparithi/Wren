@@ -8,3 +8,5 @@ instance/
 .vscode/
 .DS_Store
 venv/
+credentials.json
+

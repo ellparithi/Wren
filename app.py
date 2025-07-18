@@ -1,16 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
+from flask import Flask, render_template, request
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
 
 app = Flask(__name__)
 
-def init_db():
-    conn = sqlite3.connect('waitlist.db')
-    c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS waitlist (id INTEGER PRIMARY KEY, name TEXT, email TEXT)''')
-    conn.commit()
-    conn.close()
+# Setup Google Sheets connection
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+client = gspread.authorize(creds)
 
-init_db()
+# Open the sheet by name
+sheet = client.open("Wren OI Waitlist").sheet1
 
 @app.route('/')
 def home():
@@ -21,12 +22,10 @@ def waitlist():
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        conn = sqlite3.connect('waitlist.db')
-        c = conn.cursor()
-        c.execute("INSERT INTO waitlist (name, email) VALUES (?, ?)", (name, email))
-        conn.commit()
-        conn.close()
+        # Append to Google Sheet
+        sheet.append_row([name, email, timestamp])
 
         return render_template('waitlist.html', success=True)
 
